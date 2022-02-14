@@ -1,0 +1,171 @@
+.postBox {
+    width: 32rem;
+
+    @media (max-width: 720px) {
+        & {
+            width: 100%;
+        }
+    }
+
+    box-sizing: border-box;
+
+    background-color: #2a2a2a;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 1rem;
+    gap: 1rem;
+
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 12px 1px rgba(0, 0, 0, 0.5);
+
+    .imgInput {
+        width: 8rem;
+        height: 8rem;
+
+        position: relative;
+
+        margin: auto;
+
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 40%;
+
+        background-color: transparent;
+
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition: border-color 0.2s;
+
+        &:hover {
+            border-color: #eee;
+
+            .discardImg {
+                right: -4rem;
+                opacity: 1;
+            }
+        }
+
+        &[data-no-image=false] {
+            border-color: rgba(0, 0, 0, 0);
+        }
+
+        input {
+            width: 100%;
+            height: 100%;
+
+            display: none;
+        }
+
+        img {
+            width: 2rem;
+            height: 2rem;
+
+            object-fit: contain;
+        }
+
+        .postImg {
+            width: 100%;
+            height: 100%;
+
+            z-index: 1;
+        }
+
+        .discardImg {
+            width: 2rem;
+            height: 2rem;
+
+            position: absolute;
+
+            margin: 0;
+
+            background-color: transparent;
+            border: none;
+
+            cursor: pointer;
+
+            right: 0;
+            opacity: 0;
+
+            transition: right 0.2s, opacity 0.2s;
+        }
+    }
+
+    .name, .message {
+        width: 100%;
+        height: 2rem;
+
+        background-color: #444;
+
+        border: 0;
+        border-radius: 0.5rem;
+
+        padding: 0.5rem;
+        box-sizing: border-box;
+
+        outline: 0;
+        color: #fff;
+    }
+
+    .message {
+        height: 10rem;
+        resize: none;
+    }
+
+    .postButtons {
+        width: 100%;
+
+        display: flex;
+        justify-content: flex-end;
+
+        gap: 1rem;
+
+        .discard, .publish {
+            width: 7rem;
+            height: 2.5rem;
+
+            background-color: transparent;
+            color: #fff;
+
+            border: solid 1px #71bb00;
+            border-radius: 0.25rem;
+
+            cursor: pointer;
+
+            font-size: 0.8rem;
+            font-weight: 400;
+
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .discard {
+            width: 6rem;
+
+            border: 0;
+            background-color: transparent;
+            text-decoration: underline;
+
+            color: #777;
+
+            &:hover {
+                color: #589200;
+            }
+        }
+
+        .publish {
+            &:hover {
+                background-color: #71bb00;
+            }
+
+            &:active {
+                border-color: #589200;
+                background-color: #589200;
+            }
+        }
+    }
+}
