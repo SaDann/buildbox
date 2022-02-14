@@ -62,14 +62,6 @@ export function PostBox(props: Props) {
         )}
       </button>
 
-      {/* <input className={styles.imgInput} type="file" accept='image/png, image/jpeg'>
-        {(item.image === '') ? (
-          <img src="no-image.png" alt="" />
-        ) : (
-          <img className={styles.postImg} src="" alt='' />
-        )}
-      </input> */}
-
       <input
         onInput={(e) => {
           setItem({ ...item, name: e.currentTarget.value })
